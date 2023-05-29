@@ -22,7 +22,7 @@ This project consisted on a design of a card with a QR code that should be displ
 
 ### Links
 
-- Solution URL: (https://github.com/PCGP22/Code-challenges/QR-component-FEM)
+- Solution URL: (https://github.com/PCGP22/Code-challenges/blob/main/QR%20component%20FEM)
 
 ## My process
 
