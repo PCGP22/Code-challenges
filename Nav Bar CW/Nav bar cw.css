@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root{
+    --fondo:rgb(244, 238, 230);
+    --seleccion:rgb(111, 105, 97);
+    --boton:rgb(43, 52, 44);
+    --boton--encima:rgb(62, 74, 63);
+    --boton--activo:rgb(83, 100, 85);
+    --amarillo:rgb(247, 179, 0);
+    --texto:rgb(107, 105, 101);
+    --blanco: rgb(244, 244, 244);
+    --negro:rgb(2, 2, 2);
+    background-color: var(--fondo);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6em;
+    color: var(--texto);
+}
+
+::selection{
+    background-color:var(--seleccion);
+    color:var(--blanco);
+}
+
+a{
+    color:inherit;
+    text-decoration: none;
+
+}
+
+.nav, .nav__links,.nav__sign-up,.footer__logos,.popup,.popup__section,.main,.main__ratings{
+    display: flex;
+}
+
+.nav, .footer__logos{
+    margin-top: 30px;
+    justify-content: space-around;
+}
+.nav, .footer__logos,.main__ratings{
+    align-items: center;
+}
+
+.nav__links,.nav__sign-up{
+    list-style-type: none;
+}
+.nav__li,.nav__sign-up__sign-in{
+    padding: 20px;
+}
+.nav__burger, .popup{
+    visibility: hidden;
+}
+.nav__burger,.popup,.popup::before{
+    position: absolute;
+}
+
+.button{
+    background-color:var(--boton);
+    color:var(--blanco);
+    font-weight: 600;
+    height: 4em;
+    width: 9em;
+    border:none;
+    border-radius: 0.5em;
+}
+.button:active,.button:hover,.nav__burger{
+    cursor:pointer;
+    
+}
+.button:active,.button:hover{
+    background-color: var(--boton--encima);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+a:hover{
+    color:var(--negro);
+}
+.button:active{
+    background-color: var(--boton--activo);
+}
+
+.nav__products{
+    position: relative;
+}
+
+.popup,.popup::before{
+    background-color:var(--blanco);
+}
+
+.popup{
+    top: 8vh;
+    flex-flow: column;
+    width: 450px;
+    border-radius: 1em;
+    left: -2vw;
+}
+
+.popup__image{
+    height: 25px;
+    margin-top: 18px;
+    margin-left: 30px;
+    margin-right: 1em;
+}
+.popup__text p, .popup__text h3{
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.popup__caption, .main__text{
+    color: var(--negro);   
+}
+.popup__text{
+    margin: 15px;
+    margin-left: 0;
+}
+
+.popup__primero{
+    margin-top:20px;
+}
+.popup__ultimo{
+    margin-bottom: 20px;
+} 
+.popup::before{
+    content:"";
+    width:40px;
+    height: 40px;
+    left:12%;
+    top:-8px;
+    transform: rotate(45deg);
+}
+
+.main{
+   
+    margin-top: 90px;
+    width: 90%;
+}
+
+.main__section{
+    margin:auto 130px;
+}
+
+.aside__image{
+    height: 25em;
+    margin-right: 150px;
+}
+.main__text{
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1em;
+    margin-bottom:0;
+}
+.main__text--yellow{
+    color:var(--amarillo);
+}
+
+.ratings__icon{
+    padding: 8px;
+}
+.ratings__text{
+    display:inline;
+}
+.footer{
+    width:60%;
+    margin: 60px auto;
+    line-height: 1.5em;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+
+
+@media (max-width:90em) {
+    .footer{
+        width: 90%;
+    }
+    .footer__logos{
+        flex-wrap: wrap;
+    }
+    .footer__logos img{
+        padding:min(1em);
+    }
+}
+@media (max-width:75em){
+    
+    .main__section,.aside__image{
+        margin:50px;
+    }
+    .main{
+        margin-top: 0;
+    }
+   
+}
+@media(max-width:55em){
+   
+
+    .aside__image{
+        display: none;
+    }
+    
+    .nav__links{
+        background-color: var(--blanco);
+        height: 100%;
+        
+    }
+    .nav__links,.nav__sign-up{
+        display:block;
+        position:absolute;
+        visibility: hidden;
+        top:0;
+        right:0;
+        width: 45vw;
+        text-align: center;
+    }
+    .nav__sign-up{
+        top: 260px;
+    }
+    .nav__burger{
+        visibility: visible;
+        right:15px;
+        transform:translateY(-15px);
+        
+    }
+
+    .aside__image,.main__section{
+        margin:auto;
+    }
+    .main{
+        width: 80%;
+        margin:auto;
+    }
+    .main__section{
+        justify-content: center;
+        
+    }
+    .popup{
+        transform: translate(-50vw,40px);
+        top:30px;
+        width:90vw;
+    }
+
+    .popup::before{
+        opacity: 0;
+    }
+
+    .button{
+        display:block;
+     margin: 20px auto 40px auto;   
+    }
+    .nav__button{
+        display:none;
+    }
+}
+
+@keyframes aparecer{
+    from{
+        visibility:hidden;
+        opacity:0;
+        }
+    to{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+*{
+    transition:all 300ms;
+}
+.desplazar{
+    transform:translate(-30vw,-12px);
+}
+.display{
+    animation: aparecer 300ms ease-in-out;
+    animation-fill-mode: forwards;
+}

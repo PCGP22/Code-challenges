@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="/Assets/favicon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="Nav bar cw.css"/>
+    <title>Nav Bar CW</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav__icon">
+            <img src="/Assets/Logo.svg" alt="Ondeck logo">
+        </div>
+        <div class="nav__links">
+            <li class="nav__li nav__products" ><a href="#" onclick="showPopup()">Products</a>
+                <div class="popup" onclick="showPopup()">
+                    <div class="popup__section popup__primero">
+                        <img class="popup__image" src="/Assets/Spense_Icon.svg" alt="Spense icon"/>
+                        <div class="popup__text">
+                            <h3 class="popup__caption">Spense</h3>
+                            <p>Spense is a landing page for writers. Great for practicing absolute positioning and flex layouts.</p>
+                        </div>
+                    </div>
+                    <div class="popup__section">
+                        <img class="popup__image" src="/Assets/Fiber_Icon.svg" alt="Fiber icon"/>
+                        <div class="popup__text">
+                            <h3 class="popup__caption">Fiber Landing Page</h3>
+                            <p>An online portfolio generator. Great to practice flex/grid layouts, and absolute positioning.</p>
+                        </div>
+                    </div>
+                    <div class="popup__section popup__ultimo">
+                        <img class="popup__image" src="/Assets/Gradie_Icon.svg" alt="Gradie icon"/>
+                        <div class="popup__text">
+                            <h3 class="popup__caption">Gradie Sign Up Page</h3>
+                            <p>Gradie is a simple sign up page, great to practice center layouts.</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="nav__li"><a href="#">Challenges</a></li>
+            <li class="nav__li"><a href="#">Resources</a></li>
+            <li class="nav__li"><a href="#">Other Links</a></li>
+        </div>
+        <div class="nav__sign-up">
+            <li class="nav__sign-up__sign-in"><a href="#">Sign in</a></li>
+            <button class="nav__button button">Try for free</button>
+        </div>
+        <div class="nav__burger">
+            <button class="nav__burger" onclick="burguerMenuShow()"><img src="/Assets/Menu.svg" height="50px" alt="Ondeck logo"></button>
+        </div>
+    </nav>
+    
+    <main class="main">
+        <section class="main__section">
+            <h1 class="main__text">Ondeck is your remote <span class="main__text--yellow">conference calling tool</span></h1>
+            <p>Ondeck is a service that allows you to create beautiful, online, and encrypted video calls for you and your remote team.</p>
+            <button class="main__button button">Try for free</button>
+            <div class="main__ratings">
+                <p class="ratings__text">5.0 rating based on reviews from:</p>
+                <img class="ratings__icon" src="/Assets/Capterra Logo.svg" alt="Capterra logo"/>
+                <img class="ratings__icon" src="/Assets/AlternativeTo Logo.svg" alt="Alternativeto logo"/>
+                <img class="ratings__icon" src="/Assets/Shopify logo.png" height="25px" width="25px" alt="Shopify logo"/>
+            </div>
+        </section>
+        <aside class="aside">
+            <img class="aside__image" src="/Assets/Hero Image.png" alt="Hero image">
+        </aside>
+    </main>
+    <footer class="footer">
+        <p class="footer__text">Trusted by 5+ million people at companies like</p>
+        <div class="footer__logos">
+            <img src="/Assets/Netflix Logo.svg" alt="Netflix logo">
+            <img src="/Assets/Shopify Logo.svg" alt="Shopify logo">
+            <img src="/Assets/Spotify Logo.svg" alt="Spotify logo">
+            <img src="/Assets/Walmart Logo.svg" alt="Walmart logo">
+        </div>
+    </footer>
+    <script>
+        function showPopup(){
+            let signUp = document.querySelector(".nav__sign-up");
+            document.body.querySelector(".popup").classList.toggle("display");
+            event.stopImmediatePropagation();
+            if(screen.width < 390){
+                signUp.classList.toggle("display");
+            }
+        }
+        function burguerMenuShow(){
+            let burguerMenu = document.querySelector(".nav__burger");
+            let links = document.querySelector(".nav__links");
+            let signUp = document.querySelector(".nav__sign-up");
+
+            burguerMenu.classList.toggle("desplazar");
+            links.classList.toggle("display");
+            signUp.classList.toggle("display");
+
+        }
+    </script>
+</body>
+</html>
